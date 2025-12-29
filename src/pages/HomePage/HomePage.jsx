@@ -1,33 +1,45 @@
 //Show All Categories. Do a grid 🤷‍♀️
+import './HomePage.css'
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   return (
-    <>
-      <main>
-        <h1 id="recipe-app-title">🧆Your Next Meal🍴</h1>
-        <p id="welcome-message">Hey good looking? Whatcha' cooking today?!</p>
+    <main className='text-center'>
+        <h1 id="recipe-app-title">WorldWide Cookbook 📚</h1>
+        <p id="welcome-message" className='subtitle'><i>Hey good looking? Whatcha' cooking today?!</i></p>
 
-        <div id="category-grid" className="row">
-            <div id="categories-col-1" className="col d-flex flex-column">
-                <button className="category-button">Category 1</button>
-                <button className="category-button">Category 2</button>
-                <button className="category-button">Category 3</button>
-                <button className="category-button">Category 4</button>
-                <button className="category-button">Category 5</button>
-                <button className="category-button">Category 6</button>
-                <button className="category-button">Category 7</button>
+        <div id="category-grid">
+            <h2>Meat Based</h2>
+            <div  className='category-row'>
+                <Link to='/category/beef'><button className="category-button">Beef</button></Link>
+                <Link to='/category/chicken'><button className="category-button">Chicken</button></Link>
+                <Link to='/category/pork'><button className="category-button">Pork</button></Link>
+           </div>
+            <div className='category-row'>
+                <Link to='/category/lamb'><button className="category-button">Lamb</button></Link>
+                <Link to='/category/goat'><button className="category-button">Goat</button></Link>
+                <Link to='/category/seafood'><button className="category-button">Seafood</button></Link>
             </div>
-            <div id="categories-col-2" className="col d-flex flex-column">
-                <button className="category-button">Category 8</button>
-                <button className="category-button">Category 9</button>
-                <button className="category-button">Category 10</button>
-                <button className="category-button">Category 11</button>
-                <button className="category-button">Category 12</button>
-                <button className="category-button">Category 13</button>
-                <button className="category-button">Category 14</button>
+            <h2>Meal Based</h2>
+            <div className='category-row'>
+                <Link to='/category/pasta'><button className="category-button">Pasta</button></Link>
+                <Link to='/category/side'><button className="category-button">Side</button></Link>
+                <Link to='/category/starter'><button className="category-button">Starter</button></Link>
+            </div>
+            <div className='category-row'>
+                <Link to='/category/breakfast'><button className="category-button">Breakfast</button></Link>
+                <Link to='/category/dessert'><button className="category-button">Dessert</button></Link> 
+            </div>    
+            <h2>Vegan & Vegetarian Based</h2>           
+            <div className='category-row'>
+                <Link to='/category/vegan'><button className="category-button">Vegan</button></Link>
+                <Link to='/category/vegetarian'><button className="category-button">Vegetarian</button></Link>  
+            </div>
+            <h2>Other</h2>
+            <div className='category-row'>
+                <Link to='/category/miscellaneous'><button className="category-button">Miscellaneous</button></Link>
             </div>
         </div>
-      </main>
-    </>
+    </main>
   );
 }

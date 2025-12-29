@@ -1,15 +1,28 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 90vw;
+  height: 90vh;
+  margin: 0;
+  padding: 0 2rem;
 }
 
-h1, h2, h3, .title{
 
-  font-family: "Jim Nightshade", cursive;
+h1, h2, h3, .title{
+  font-family: "Chelsea Market", cursive;
+  margin: 1rem 0;
+}
+.subtitle{
+  font-size: 1.5rem;
+  font-style: italic;
 }
 
 p{
   font-family: "Newsreader", sans-serif;
+}
+
+.nav-item{
+  font-size: 1.25rem;
+  color: rgb(80, 39, 16);
+}
+a.nav-item:hover{
+  color: rgb(223, 160, 24);
 }

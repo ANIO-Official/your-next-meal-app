@@ -4,8 +4,9 @@
 
 export default function FavoritesPage(){
     return (
-        <>
-            <h2>Favorite Recipes</h2>
-        </>
+        <main className='text-center'>
+            <h1>🥣 Your Cookbook 📖</h1>
+            <p className="subtitle"><i>⭐Favorite Recipes⭐</i></p>
+        </main>
     )
 }
