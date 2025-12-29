@@ -26,3 +26,9 @@ p{
 a.nav-item:hover{
   color: rgb(223, 160, 24);
 }
+
+nav a.active{
+  font-weight: bold;
+  color: rgb(141, 17, 17);
+  font-style: oblique;
+}

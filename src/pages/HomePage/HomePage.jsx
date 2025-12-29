@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <main className='text-center'>
         <h1 id="recipe-app-title">WorldWide Cookbook 📚</h1>
-        <p id="welcome-message" className='subtitle'><i>Hey good looking? Whatcha' cooking today?!</i></p>
+        <p id="welcome-message" className='subtitle'><i>Hey good looking? Whatcha' cooking?</i></p>
 
         <div id="category-grid">
             <h2>Meat Based</h2>
