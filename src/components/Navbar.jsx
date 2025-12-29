@@ -8,6 +8,8 @@ export default function Navbar() {
         <header>
             <nav className="d-flex flex-row justify-content-between">
                 <NavLink id="nav-title" className="nav-item" to="/">🧆Your Next Meal🍴</NavLink>
+                <input type='search' placeholder="Search for recipes... like Peach Cobbler!"/>
+
                 <ul className="d-flex flex-row" style={{ listStyle: 'none' }}>
                     <NavLink className="me-2 nav-item" to="/">Home</NavLink>
                     <NavLink className="me-2 nav-item" to="/favorites">Favorites</NavLink>

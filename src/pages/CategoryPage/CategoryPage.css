@@ -1,0 +1,10 @@
+.recipe-card{
+    background: linear-gradient(rgb(73, 53, 42), rgb(141, 93, 68));
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    width: 25vw;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    border-radius: 15px;
+}
