@@ -7,9 +7,10 @@ import HomePage from "../HomePage/HomePage";
 export default function NotFoundPage(){
     return (
         <main>
-            <h2>404 Page Note Found</h2>
-            <p>Don't worry! We'll take you back home buddy 🙂</p>
-            <Link to={<HomePage/>}><button>Return to Home</button></Link>
+            <h2>404 Page Not Found</h2>
+            <p className="subtitle">😲 You found an 'Unknown Page' 🏴‍☠️!</p>
+            <p>Don't worry! We'll take you back to the kitchen 👨‍🍳👩‍🍳</p>
+            <Link to='/'><button>Return to Home</button></Link>
         </main>
     )
 }
