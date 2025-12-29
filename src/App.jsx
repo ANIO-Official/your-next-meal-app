@@ -17,7 +17,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/category" element={<CategoryPage />} />
+        <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/recipe-details" element={<RecipeDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
