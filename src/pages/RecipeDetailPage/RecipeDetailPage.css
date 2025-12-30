@@ -1,0 +1,27 @@
+#recipe-video{
+    width: 60vw;
+    height: 60vh;
+}
+
+
+.ingredient-column{
+    margin-right: 2rem;
+}
+
+#ingredient-name{
+    font-weight: bold;
+    list-style:inside square;
+    font-size: 1.5rem;
+}
+
+#ingredient-measurement{
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+@media(max-width: 650px){
+    
+    #ingredient-name,  #ingredient-measurement{
+        font-size: 1rem;
+    }
+}

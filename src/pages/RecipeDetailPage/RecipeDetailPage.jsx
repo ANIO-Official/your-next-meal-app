@@ -1,6 +1,7 @@
 //Show Specific Recipe's Details
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../custom-hooks/useFetch";
+import "./RecipeDetailPage.css";
 
 export default function RecipeDetailPage() {
   const navigate = useNavigate();
@@ -22,26 +23,42 @@ export default function RecipeDetailPage() {
         <p>Error Loading Recipe Data! ⛔</p>
       ) : (
         <>
-          <p className="recipe-category subtitle">{`${
-            category[0].toUpperCase() + category.slice(1)
-          }`}</p>
-          <p className="recipe-area subtitle">{`${data.meals[0].strArea}`}</p>
-          
-          <iframe 
-          style={{
-            width: '450px',
-            height: '315px'
-          }}
-          src={data.meals[0].strYoutube && data.meals[0].strYoutube.replace('watch?v=', 'embed/')} />
+          <p className="recipe-area-category subtitle">{`${
+            data.meals[0].strArea
+          } ${category[0].toUpperCase() + category.slice(1)}`}</p>
+
+          <iframe
+            id="recipe-video"
+            src={
+              data.meals[0].strYoutube &&
+              data.meals[0].strYoutube.replace("watch?v=", "embed/")
+            }
+          />
 
           <h2>Ingredients</h2>
-          <ul id="recipe-ingredients">
-            {
-                Object.keys(data.meals[0]).filter(
-                    (key) => key.includes('strIngredient') && data.meals[0][`${key}`] !== '').map(
-                    (keyIngredient) => <li key={keyIngredient}>{data.meals[0][keyIngredient]}</li>
+          <ul id="recipe-ingredients" className="d-flex flex-row">
+            <div id="ingredient-name" className="ingredient-column">
+              {Object.keys(data.meals[0])
+                .filter(
+                  (key) =>
+                    key.includes("strIngredient") &&
+                    data.meals[0][`${key}`] !== ""
                 )
-            }
+                .map((keyIngredient) => (
+                  <li key={keyIngredient}>{data.meals[0][keyIngredient]}</li>
+                ))}
+            </div>
+            <div id="ingredient-measurement" className="ingredient-column">
+              {Object.keys(data.meals[0])
+                .filter(
+                  (key) =>
+                    key.includes("strMeasure") &&
+                    data.meals[0][`${key}`] !== " "
+                )
+                .map((keyMeasurement) => (
+                  <li key={keyMeasurement}>{data.meals[0][keyMeasurement]}</li>
+                ))}
+            </div>
           </ul>
           <h3>Let's Get Cooking!</h3>
         </>
