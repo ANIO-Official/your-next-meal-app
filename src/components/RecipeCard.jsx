@@ -14,7 +14,6 @@ export default function RecipeCard() {
                 <p className="recipe-name">Recipe Name</p>{/* strMeal Property */}
                 <p className="recipe-area">Area of Origin</p> {/* strArea Property */}
                 <p className="recipe-tag">Tag</p> {/* strTags Property. List each if it exist*/}
-                <p className="recipe-video">Video Link</p>
             </div>
         </Link>
 

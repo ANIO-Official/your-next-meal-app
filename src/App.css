@@ -21,7 +21,7 @@ p{
 
 .nav-item{
   font-size: 1.25rem;
-  color: rgb(80, 39, 16);
+  color: recipe-search-bar;
 }
 a.nav-item:hover{
   color: rgb(223, 160, 24);
@@ -31,4 +31,15 @@ nav a.active{
   font-weight: bold;
   color: rgb(141, 17, 17);
   font-style: oblique;
+}
+
+#recipe-search-bar{
+  border-radius: 2rem;
+  border: 0.3rem solid rgb(141, 111, 72);
+  width: 25vw;
+  padding: 0.5rem 1rem;
+}
+#recipe-search-bar:focus{
+  outline: none;
+  border-color: rgb(223, 160, 24);
 }

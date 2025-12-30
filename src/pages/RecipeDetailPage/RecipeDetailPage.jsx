@@ -12,6 +12,7 @@ export default function RecipeDetailPage(){
             <img src="" alt="picture of food" />
             <p className="subtitle">Recipe Area Origin</p>
             <p className="recipe-category">{`${category[0].toUpperCase() + category.slice(1)}`}</p> {/* Make into link, use prop's category as the to in template literal */}
+            <p className="recipe-video">Video Link</p>
             <h2>Ingredients</h2>
             <ul>
                <li className="recipe-ingredient">Recipe Ingredient here with Measure</li>
