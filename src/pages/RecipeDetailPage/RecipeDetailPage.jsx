@@ -25,7 +25,7 @@ export default function RecipeDetailPage() {
         <>
           <p className="recipe-area-category subtitle">{`${
             data.meals[0].strArea
-          } ${category[0].toUpperCase() + category.slice(1)}`}</p>
+          } ${category[0].toUpperCase() + category.slice(1)} Recipe`}</p>
 
           <iframe
             id="recipe-video"
@@ -61,6 +61,11 @@ export default function RecipeDetailPage() {
             </div>
           </ul>
           <h3>Let's Get Cooking!</h3>
+          <ol className="recipe-instructions">{
+            data.meals[0].strInstructions && data.meals[0].strInstructions.split('. ').map((sentence) => 
+                <li className="instruction-step" key={data.meals[0].idMeal + sentence[0]}>{` ${sentence}.`}</li>
+            )
+            }</ol>
         </>
       )}
       <button onClick={() => navigate(-1)}>Go Back</button>

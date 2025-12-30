@@ -11,12 +11,17 @@
 #ingredient-name{
     font-weight: bold;
     list-style:inside square;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 #ingredient-measurement{
     list-style: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.instruction-step{
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 @media(max-width: 650px){
