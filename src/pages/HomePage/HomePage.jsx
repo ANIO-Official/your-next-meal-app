@@ -57,6 +57,7 @@ export default function HomePage() {
                     <button className="category-button">
                       {category.strCategory[0].toUpperCase() +
                         category.strCategory.slice(1)}
+                        <img className="category-image" src={`${category.strCategoryThumb}`}/>
                     </button>
                   </NavLink>
                 </li>
@@ -70,6 +71,7 @@ export default function HomePage() {
                     <button className="category-button">
                       {category.strCategory[0].toUpperCase() +
                         category.strCategory.slice(1)}
+                        <img className="category-image" src={`${category.strCategoryThumb}`}/>
                     </button>
                   </NavLink>
                 </li>
@@ -83,6 +85,7 @@ export default function HomePage() {
                     <button className="category-button">
                       {category.strCategory[0].toUpperCase() +
                         category.strCategory.slice(1)}
+                        <img className="category-image" src={`${category.strCategoryThumb}`}/>
                     </button>
                   </NavLink>
                 </li>
@@ -96,6 +99,7 @@ export default function HomePage() {
                     <button className="category-button">
                       {category.strCategory[0].toUpperCase() +
                         category.strCategory.slice(1)}
+                        <img className="category-image" src={`${category.strCategoryThumb}`}/>
                     </button>
                   </NavLink>
                 </li>

@@ -8,6 +8,8 @@
     font-size: 1.1rem;
     border: none;
     filter: drop-shadow(3px 3px rgba(65, 33, 14, 0.527));
+    display: flex;
+    justify-content: center;
 }
 
 .category-row{
@@ -15,4 +17,11 @@
     display: flex;
     justify-content: center;
     list-style: none;
+}
+
+.category-image{
+    width: 50px;
+    width: 50px;
+    margin-left: 0.5rem;
+    border-radius: 100%;
 }
