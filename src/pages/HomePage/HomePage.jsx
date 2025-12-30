@@ -8,6 +8,7 @@ export default function HomePage() {
         <h1 id="recipe-app-title">WorldWide Cookbook 📚</h1>
         <p id="welcome-message" className='subtitle'><i>Hey good looking? Whatcha' cooking?</i></p>
 
+        {/* Fetch All Categories Dynamically make a Nav Link for Each | Hardcoded currently for Testing */}
         <nav id="category-nav">
             <h2>Meat Based</h2>
             <div  className='category-row'>

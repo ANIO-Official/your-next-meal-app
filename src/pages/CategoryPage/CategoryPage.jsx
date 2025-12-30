@@ -16,7 +16,7 @@ export default function CategoryPage() {
                 <NavLink to='/'>{`Recipes > `}</NavLink>
                 <NavLink to={`/category/${category}`}>{`${category} > `}</NavLink>
             </nav>
-            {/* Use Relative Paths for each list recipe item created. */}
+            {/* Dynamic list of Recipe Cards for all recipes of the category*/}
             <ul id="recipe-card-list">
                 <RecipeCard />
                 <RecipeCard />
