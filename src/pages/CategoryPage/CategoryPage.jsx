@@ -25,12 +25,12 @@ export default function CategoryPage() {
                 
                 Fetch the recipes for the category. 
             */}
-            <ul id="recipe-card-list" className="row row-cols-3">
+            <ul id="recipe-card-list" className="row row-cols-3" style={{listStyle: 'none'}}>
                 {
-                    loading? <p>Loading Receipes... please wait 🙇‍♀️</p> :
-                    error? <p>Error Loading Recipes! 😭</p> :
+                    loading? <p className="subtitle">Loading Receipes... please wait 🙇‍♀️</p> :
+                    error? <p className="subtitle">Error Loading Recipes! 😭</p> :
                     data.meals.map((meal) => 
-                        <RecipeCard name={meal.strMeal} thumbnail={meal.strMealThumb} id={meal.idMeal}/>
+                        <li key={meal.idMeal}><RecipeCard name={meal.strMeal} thumbnail={meal.strMealThumb} id={meal.idMeal}/></li>
                     )
                 }
             </ul>

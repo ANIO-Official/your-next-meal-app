@@ -1,34 +1,52 @@
 //Show Specific Recipe's Details
-import { useNavigate, useParams} from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom";
+import useFetch from "../../custom-hooks/useFetch";
 
+export default function RecipeDetailPage() {
+  const navigate = useNavigate();
+  const { category, recipename, id } = useParams();
+  //Fetch Single Recipe using the id provided and Show it.
+  const { data, loading, error } = useFetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+  );
 
-export default function RecipeDetailPage({id}){
-    const navigate = useNavigate()
-    const {category, recipename } = useParams()
-    //Fetch Single Recipe using the id provided and Show it.
+  return (
+    <main>
+      <h1>
+        {recipename} | {id}
+      </h1>
 
-    return (
-        <main>
-            <h1>{recipename} | Recipe ID</h1>
-            <img src="" alt="picture of food" />
-            <p className="subtitle">Recipe Area Origin</p>
-            <p className="recipe-category">{`${category[0].toUpperCase() + category.slice(1)}`}</p> {/* Make into link, use prop's category as the to in template literal */}
-            {/*
-                    If tags is not an empty string, create a p tag for each item separated by commas,
-                     otherwise show nothing. 
-                    strTags Property. List each if it exist
-            */}
-                {/* {tags != ''? tags.split(",").map((tag) => <p className="recipe-tag">{tag}</p>) : false} */}
-            <p className="recipe-video">Video Link</p>
-            <h2>Ingredients</h2>
-            <ul>
-               <li className="recipe-ingredient">Recipe Ingredient here with Measure</li>
-            </ul>
-            <h3>Let's Get Cooking!</h3>
-            <ol>
-                Ordered steps here
-            </ol>
-            <button onClick={() => navigate(-1)}>Go Back</button>
-        </main>
-    )
+      {loading ? (
+        <p>Loading Recipe Data...Please Wait 🙇‍♀️🥣</p>
+      ) : error ? (
+        <p>Error Loading Recipe Data! ⛔</p>
+      ) : (
+        <>
+          <p className="recipe-category subtitle">{`${
+            category[0].toUpperCase() + category.slice(1)
+          }`}</p>
+          <p className="recipe-area subtitle">{`${data.meals[0].strArea}`}</p>
+          
+          <iframe 
+          style={{
+            width: '450px',
+            height: '315px'
+          }}
+          src={data.meals[0].strYoutube && data.meals[0].strYoutube.replace('watch?v=', 'embed/')} />
+
+          <h2>Ingredients</h2>
+          <ul id="recipe-ingredients">
+            {
+                Object.keys(data.meals[0]).filter(
+                    (key) => key.includes('strIngredient') && data.meals[0][`${key}`] !== '').map(
+                    (keyIngredient) => <li key={keyIngredient}>{data.meals[0][keyIngredient]}</li>
+                )
+            }
+          </ul>
+          <h3>Let's Get Cooking!</h3>
+        </>
+      )}
+      <button onClick={() => navigate(-1)}>Go Back</button>
+    </main>
+  );
 }

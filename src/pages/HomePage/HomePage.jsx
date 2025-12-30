@@ -42,10 +42,10 @@ export default function HomePage() {
       {
         //Loading
         loading ? (
-          <p>Loading Categories..Please Wait 🍖</p>
+          <p className="subtitle">Loading Categories..Please Wait 🍖</p>
         ) : //An Error
         error ? (
-          <p>Error Loading Categories ⛔</p>
+          <p className="subtitle">Error Loading Categories ⛔</p>
         ) : (
           //Show Nav when not loading or not with error
           <nav id="category-nav">

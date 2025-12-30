@@ -6,7 +6,7 @@ export default function useFetch(url, options) {
     const [data, setData] = useState (
         url.includes('categories') ? 
         { categories: []} :
-        {meals: []}
+        { meals: [] } //For both showing meals from categories and meals by id. Same format in API
     );
     const [loading, setLoading] = useState (true);
     const [error, setError] = useState(null);
@@ -17,8 +17,10 @@ export default function useFetch(url, options) {
         const controller = new AbortController();
         setData(
             url.includes('categories') ? 
-            { categories: []} :
-            {meals: []}
+            { categories: []} : //retrieve categories
+            url.includes('filter') ?
+            { meals: [] } : //retrieve recipes/meals of the category
+            { meals: [{}]} //retrieve singular meal
         );
         setError(null);
         setLoading(true);
@@ -35,7 +37,7 @@ export default function useFetch(url, options) {
             } catch (error) {
                 if (error.name !== 'AbortError') {
                     console.log('Data encountered an error!')
-                    setError(err);
+                    setError(error);
                 }
             } finally {
                 setLoading(false);

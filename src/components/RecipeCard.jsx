@@ -10,7 +10,7 @@ export default function RecipeCard({name, thumbnail, id}) {
 
     {/* Instead of example, it be the recipe's strMeal property to lowercase with ' ' replaced with - */}
     return (
-        <Link to={`/category/${category}/${connectedName}`}>
+        <Link to={`/category/${category}/${connectedName}/${id}`}>
             <div className="recipe-card">
                 <p className="recipe-name">{name}</p>{/* strMeal Property */}
                 <img className="recipe-thumbnail" src={thumbnail} />
