@@ -63,7 +63,7 @@ export default function RecipeDetailPage() {
           <h3>Let's Get Cooking!</h3>
           <ol className="recipe-instructions">{
             data.meals[0].strInstructions && data.meals[0].strInstructions.split('. ').map((sentence) => 
-                <li className="instruction-step" key={`${data.meals[0].idMeal}${sentence}`}>{` ${sentence}.`}</li>
+                <li className="instruction-step" key={`${data.meals[0].idMeal}${sentence}`}>{` ${sentence}`}</li>
             )
             }</ol>
         </>

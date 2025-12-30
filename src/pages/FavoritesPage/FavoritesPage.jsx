@@ -8,6 +8,7 @@ export default function FavoritesPage(){
             <h1>🥣 Your Cookbook 📖</h1>
             <p className="subtitle"><i>⭐Favorite Recipes⭐</i></p>
             {/* Access the Favorites Context to display all favorite recipes as recipe cards. */}
+            <p>No Favorites Yet? Go Explore, and try something new!</p>
         </main>
     )
 }

@@ -1,6 +1,7 @@
 #recipe-video{
     width: 60vw;
     height: 60vh;
+    border: 2px outset rgb(252, 247, 247);
 }
 
 

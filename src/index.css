@@ -2,7 +2,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  scrollbar-color: #a7a3a3 rgb(228, 224, 224);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -40,7 +40,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: "Old Standard TT", serif;
-  background-color: #6e4421;
+  background-color: #5a5e64;
   color: white;
   cursor: pointer;
   transition: border-color 0.25s;
