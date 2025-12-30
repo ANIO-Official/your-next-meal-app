@@ -24,8 +24,8 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  background-color: rgb(255, 239, 203);
-  color: rgb(46, 43, 43);
+  background-image: url('./assets/field-5236879_1920_jplenio.jpg');
+  color: rgb(24, 22, 22);
 }
 
 h1 {
@@ -39,18 +39,18 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Old Standard TT", serif;
   background-color: #6e4421;
   color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  outline: 2px solid #e69d16;
+  outline: 4px solid rgb(75, 216, 226);
 }
 
 button:active{
-  background: linear-gradient(#3d230e, #5c1c03);
+  background: linear-gradient(#60aad4, #329ad6);
 }
 button:focus,
 button:focus-visible {

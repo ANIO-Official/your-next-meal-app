@@ -13,11 +13,11 @@ export default function CategoryPage() {
       );
 
     return (
-        <main>
+        <main id="category-page">
             <h2>{`${category[0].toUpperCase() + category.slice(1)}`} Recipes</h2>
             <nav className="sub-nav">
-                <NavLink to='/'>{`Categories > `}</NavLink>
-                <NavLink to={`/category/${category}`}>{`${category} > `}</NavLink>
+                <NavLink className='sub-nav-link' to='/'>{`Categories > `}</NavLink>
+                <NavLink className='sub-nav-link' to={`/category/${category}`}>{`${category} > `}</NavLink>
             </nav>
             {/* 
                 Dynamic list of Recipe Cards for all recipes of the category.

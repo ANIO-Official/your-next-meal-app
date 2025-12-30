@@ -12,7 +12,7 @@ export default function RecipeDetailPage() {
   );
 
   return (
-    <main>
+    <main id="recipe-detail-page" className="page">
       <h1>
         {recipename} | {id}
       </h1>
@@ -27,13 +27,13 @@ export default function RecipeDetailPage() {
             data.meals[0].strArea
           } ${category[0].toUpperCase() + category.slice(1)} Recipe`}</p>
 
-          <iframe
+          {data.meals[0].strYoutube !== '' && <iframe
             id="recipe-video"
             src={
               data.meals[0].strYoutube &&
               data.meals[0].strYoutube.replace("watch?v=", "embed/")
             }
-          />
+          />}
 
           <h2>Ingredients</h2>
           <ul id="recipe-ingredients" className="d-flex flex-row">
@@ -63,7 +63,7 @@ export default function RecipeDetailPage() {
           <h3>Let's Get Cooking!</h3>
           <ol className="recipe-instructions">{
             data.meals[0].strInstructions && data.meals[0].strInstructions.split('. ').map((sentence) => 
-                <li className="instruction-step" key={data.meals[0].idMeal + sentence[0]}>{` ${sentence}.`}</li>
+                <li className="instruction-step" key={`${data.meals[0].idMeal}${sentence}`}>{` ${sentence}.`}</li>
             )
             }</ol>
         </>

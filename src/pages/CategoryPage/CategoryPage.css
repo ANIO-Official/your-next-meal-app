@@ -1,3 +1,15 @@
+#category-page{
+  padding: 0 2rem;
+}
+
+.sub-nav-link{
+  color: black;
+}
+.sub-nav-link.active{
+  color: rgb(105, 17, 168);
+}
+
+
 .recipe-card{
     background: linear-gradient(rgb(73, 53, 42), rgb(141, 93, 68));
     color: white;
