@@ -3,12 +3,14 @@
 import { NavLink, useNavigate, useParams } from "react-router-dom"
 import RecipeCard from "../../components/RecipeCard"
 import './CategoryPage.css'
-
+import useFetch from "../../custom-hooks/useFetch";
 
 export default function CategoryPage() {
     const navigate = useNavigate()
     const { category } = useParams()
- 
+    const { data, loading, error } = useFetch(
+        `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
+      );
 
     return (
         <main>
@@ -23,9 +25,14 @@ export default function CategoryPage() {
                 
                 Fetch the recipes for the category. 
             */}
-            <ul id="recipe-card-list">
-                <RecipeCard name={'Vodka Soda'} />
-                <RecipeCard name={'Thin Mints'} />
+            <ul id="recipe-card-list" className="row row-cols-3">
+                {
+                    loading? <p>Loading Receipes... please wait 🙇‍♀️</p> :
+                    error? <p>Error Loading Recipes! 😭</p> :
+                    data.meals.map((meal) => 
+                        <RecipeCard name={meal.strMeal} thumbnail={meal.strMealThumb} id={meal.idMeal}/>
+                    )
+                }
             </ul>
             <button onClick={() => navigate(-1)}>Go Back</button>
         </main>

@@ -3,7 +3,11 @@ import { useState, useEffect } from 'react';
 
 
 export default function useFetch(url, options) {
-    const [data, setData] = useState ({ categories: []});
+    const [data, setData] = useState (
+        url.includes('categories') ? 
+        { categories: []} :
+        {meals: []}
+    );
     const [loading, setLoading] = useState (true);
     const [error, setError] = useState(null);
 
@@ -11,7 +15,11 @@ export default function useFetch(url, options) {
         if (!url) return;
 
         const controller = new AbortController();
-        setData({ categories: []});
+        setData(
+            url.includes('categories') ? 
+            { categories: []} :
+            {meals: []}
+        );
         setError(null);
         setLoading(true);
 
