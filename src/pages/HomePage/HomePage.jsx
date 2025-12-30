@@ -1,46 +1,109 @@
 //Show All Categories. Do a grid 🤷‍♀️
-import './HomePage.css'
-import { NavLink } from 'react-router-dom';
+import "./HomePage.css";
+import { NavLink } from "react-router-dom";
+import useFetch from "../../custom-hooks/useFetch";
 
 export default function HomePage() {
-  return (
-    <main className='text-center'>
-        <h1 id="recipe-app-title">WorldWide Cookbook 📚</h1>
-        <p id="welcome-message" className='subtitle'><i>Hey good looking? Whatcha' cooking?</i></p>
+  const { data, loading, error } = useFetch(
+    "https://www.themealdb.com/api/json/v1/1/categories.php"
+  );
 
-        {/* Fetch All Categories Dynamically make a Nav Link for Each | Hardcoded currently for Testing */}
-        <nav id="category-nav">
+  //Filter out the categories for organizing under headers.
+  const meatCategories = data.categories.filter(
+    (category) =>
+      (category.strCategoryDescription.includes("meat") ||
+        category.strCategoryDescription.includes("seafood")) &&
+      !category.strCategory.includes("Vegan") &&
+      !category.strCategory.includes("Vegetarian")
+  );
+  const nonMeatCategories = data.categories.filter((category) =>
+    category.strCategory.includes("Vegan") ||
+    category.strCategory.includes( "Vegetarian")
+  );
+
+  const mealTimeCategories = data.categories.filter((category) =>
+    category.strCategoryDescription.includes("pasta") ||
+    category.strCategoryDescription.includes("meal")
+  );
+
+  const otherCategories = data.categories.filter(
+    (category) =>
+      category.strCategory.includes("Miscellaneous")
+  );
+
+  return (
+    <main className="text-center">
+      <h1 id="recipe-app-title">WorldWide Cookbook 📚</h1>
+      <p id="welcome-message" className="subtitle">
+        <i>Hey good looking? Whatcha' cooking?</i>
+      </p>
+
+      {/* Dynamically make a Nav Link for Each Category using fetched Data */}
+      {
+        //Loading
+        loading ? (
+          <p>Loading Categories..Please Wait 🍖</p>
+        ) : //An Error
+        error ? (
+          <p>Error Loading Categories ⛔</p>
+        ) : (
+          //Show Nav when not loading or not with error
+          <nav id="category-nav">
             <h2>Meat Based</h2>
-            <div  className='category-row'>
-                <NavLink to='category/beef'><button className="category-button">Beef</button></NavLink>
-                <NavLink to='category/chicken'><button className="category-button">Chicken</button></NavLink>
-                <NavLink to='category/pork'><button className="category-button">Pork</button></NavLink>
-           </div>
-            <div className='category-row'>
-                <NavLink to='category/lamb'><button className="category-button">Lamb</button></NavLink>
-                <NavLink to='category/goat'><button className="category-button">Goat</button></NavLink>
-                <NavLink to='category/seafood'><button className="category-button">Seafood</button></NavLink>
+            <div className="category-row">
+              {meatCategories.map((category) => (
+                <li key={category.idCategory}>
+                  <NavLink to={`category/${category.strCategory}`}>
+                    <button className="category-button">
+                      {category.strCategory[0].toUpperCase() +
+                        category.strCategory.slice(1)}
+                    </button>
+                  </NavLink>
+                </li>
+              ))}
             </div>
             <h2>Meal Based</h2>
-            <div className='category-row'>
-                <NavLink to='category/pasta'><button className="category-button">Pasta</button></NavLink>
-                <NavLink to='category/side'><button className="category-button">Side</button></NavLink>
-                <NavLink to='category/starter'><button className="category-button">Starter</button></NavLink>
+            <div className="category-row">
+              {mealTimeCategories.map((category) => (
+                <li key={category.idCategory}>
+                  <NavLink to={`category/${category.strCategory}`}>
+                    <button className="category-button">
+                      {category.strCategory[0].toUpperCase() +
+                        category.strCategory.slice(1)}
+                    </button>
+                  </NavLink>
+                </li>
+              ))}
             </div>
-            <div className='category-row'>
-                <NavLink to='category/breakfast'><button className="category-button">Breakfast</button></NavLink>
-                <NavLink to='category/dessert'><button className="category-button">Dessert</button></NavLink>
-            </div>    
-            <h2>Vegan & Vegetarian Based</h2>           
-            <div className='category-row'>
-                <NavLink to='category/vegan'><button className="category-button">Vegan</button></NavLink>
-                <NavLink to='category/vegetarian'><button className="category-button">Vegetarian</button></NavLink>
+            <h2>Vegan & Vegetarian Based</h2>
+            <div className="category-row">
+              {nonMeatCategories.map((category) => (
+                <li key={category.idCategory}>
+                  <NavLink to={`category/${category.strCategory}`}>
+                    <button className="category-button">
+                      {category.strCategory[0].toUpperCase() +
+                        category.strCategory.slice(1)}
+                    </button>
+                  </NavLink>
+                </li>
+              ))}
             </div>
             <h2>Other</h2>
-            <div className='category-row'>
-                <NavLink to='category/miscellaneous'><button className="category-button">Miscellaneous</button></NavLink>
+            <div className="category-row">
+              {otherCategories.map((category) => (
+                <li key={category.idCategory}>
+                  <NavLink to={`category/${category.strCategory}`}>
+                    <button className="category-button">
+                      {category.strCategory[0].toUpperCase() +
+                        category.strCategory.slice(1)}
+                    </button>
+                  </NavLink>
+                </li>
+              ))}
             </div>
-        </nav>
+          </nav>
+        )
+      }
     </main>
   );
 }

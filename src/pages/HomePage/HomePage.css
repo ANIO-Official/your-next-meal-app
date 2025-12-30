@@ -12,4 +12,7 @@
 
 .category-row{
     margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    list-style: none;
 }

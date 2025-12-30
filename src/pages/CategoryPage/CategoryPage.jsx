@@ -8,18 +8,24 @@ import './CategoryPage.css'
 export default function CategoryPage() {
     const navigate = useNavigate()
     const { category } = useParams()
+ 
 
     return (
         <main>
             <h2>{`${category[0].toUpperCase() + category.slice(1)}`} Recipes</h2>
             <nav className="sub-nav">
-                <NavLink to='/'>{`Recipes > `}</NavLink>
+                <NavLink to='/'>{`Categories > `}</NavLink>
                 <NavLink to={`/category/${category}`}>{`${category} > `}</NavLink>
             </nav>
-            {/* Dynamic list of Recipe Cards for all recipes of the category*/}
+            {/* 
+                Dynamic list of Recipe Cards for all recipes of the category.
+                On click will open a Detail Page for the specific recipe via ID.
+                
+                Fetch the recipes for the category. 
+            */}
             <ul id="recipe-card-list">
-                <RecipeCard />
-                <RecipeCard />
+                <RecipeCard name={'Vodka Soda'} />
+                <RecipeCard name={'Thin Mints'} />
             </ul>
             <button onClick={() => navigate(-1)}>Go Back</button>
         </main>

@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/category/:category/:recipename-details" element={<RecipeDetailPage />} />
+        <Route path="/category/:category/:recipename" element={<RecipeDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
