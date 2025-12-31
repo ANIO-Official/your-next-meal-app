@@ -32,7 +32,7 @@ Users should be able to:
 https://github.com/ANIO-Official/your-next-meal-app
 
 ### How To Use
-.  Clone the repository or Download the ZIP file and extract the files.
+1.  Clone the repository or Download the ZIP file and extract the files.
 2.  Open the file in Visual Studio Code.
 3.  Open the Terminal using Ctrl + ~
 4.  cd into the directory 'your-next-meal-app' in the terminal.
