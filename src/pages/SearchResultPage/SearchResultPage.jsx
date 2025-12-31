@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, } from "react-router-dom";
 import { useState } from "react";
 import useFetch from "../../custom-hooks/useFetch";
 import RecipeCard from "../../components/RecipeCard";
+import "./SearchResultPage.css"
 
 export default function SearchResultPage() {
     const navigate = useNavigate();

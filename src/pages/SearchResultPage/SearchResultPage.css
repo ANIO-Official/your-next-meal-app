@@ -1,0 +1,12 @@
+
+#recipe-search-bar{
+  border-radius: 2rem;
+  border: 2px inset black;
+  width: 25vw;
+  padding: 0 1rem;
+  margin: 0.25rem 0;
+}
+#recipe-search-bar:focus{
+  outline: none;
+  border-color: rgb(75, 216, 226);
+}

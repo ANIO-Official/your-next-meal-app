@@ -62,19 +62,6 @@ a.nav-item:hover{
   color: white;
 }
 
-
-#recipe-search-bar{
-  border-radius: 2rem;
-  border: 2px inset black;
-  width: 25vw;
-  padding: 0 1rem;
-  margin: 0.25rem 0;
-}
-#recipe-search-bar:focus{
-  outline: none;
-  border-color: rgb(75, 216, 226);
-}
-
 @media (max-width: 650px) {
   h1, h2, h3, .title{
   font-size: 1.25rem;
