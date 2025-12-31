@@ -35,7 +35,7 @@ export default function SearchResultPage() {
                         onBlur={handleClear}
                         id="recipe-search-bar" 
                         type='search' 
-                        placeholder="Search for recipes... like Peach Cobbler!"/>
+                        placeholder="Search for recipes... like pie!"/>
                 </div>
             {
                 data.meals && query !=='' && data.meals.length?
