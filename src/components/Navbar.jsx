@@ -8,12 +8,12 @@ export default function Navbar() {
     
     return (
         <header>
-            <nav id="main-nav" className="d-flex flex-column justify-content-between">
+            <nav id="main-nav">
                 <NavLink id="nav-title" className="nav-item nav-title" to="/">🧆Your Next Meal🍴</NavLink>
                 <ul className="d-flex flex-row nav-container" style={{ listStyle: 'none' }}>
-                    <NavLink className="me-2 nav-item" to="/">Home🧊</NavLink>
-                    <NavLink className="me-2 nav-item" to="/favorites">Favorites⭐</NavLink>
-                    <NavLink className="me-2 nav-item" to="/search">Search 🔍</NavLink>
+                    <NavLink className="me-3 nav-item" to="/">Home🧊</NavLink>
+                    <NavLink className="me-3 nav-item" to="/favorites">Favorites⭐</NavLink>
+                    <NavLink className="me-3 nav-item" to="/search">Search 🔍</NavLink>
                 </ul>
             </nav>
         </header>

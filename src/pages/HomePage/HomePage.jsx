@@ -51,7 +51,7 @@ export default function HomePage() {
           //Show Nav when not loading or not with error
           <nav id="category-nav">
             <h2>Meat Based</h2>
-            <div className="category-row">
+            <div className="category-row flex-column flex-lg-row">
               {meatCategories.map((category) => (
                 <li key={category.idCategory}>
                   <NavLink to={`category/${category.strCategory}`}>
@@ -68,7 +68,7 @@ export default function HomePage() {
               ))}
             </div>
             <h2>Meal Based</h2>
-            <div className="category-row">
+            <div className="category-row flex-column flex-lg-row">
               {mealTimeCategories.map((category) => (
                 <li key={category.idCategory}>
                   <NavLink to={`category/${category.strCategory}`}>
@@ -85,7 +85,7 @@ export default function HomePage() {
               ))}
             </div>
             <h2>Vegan & Vegetarian Based</h2>
-            <div className="category-row">
+            <div className="category-row flex-column flex-lg-row">
               {nonMeatCategories.map((category) => (
                 <li key={category.idCategory}>
                   <NavLink to={`category/${category.strCategory}`}>
@@ -102,7 +102,7 @@ export default function HomePage() {
               ))}
             </div>
             <h2>Other</h2>
-            <div className="category-row">
+            <div className="category-row flex-column flex-lg-row">
               {otherCategories.map((category) => (
                 <li key={category.idCategory}>
                   <NavLink to={`category/${category.strCategory}`}>

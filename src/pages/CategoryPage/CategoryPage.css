@@ -35,3 +35,25 @@
   height: 100px;
   width: 100px;
 }
+
+@media (max-width: 1000px) {
+   #category-page {
+    padding: 0 0.5rem;
+  }
+  .recipe-card{
+    font-size: 1rem;
+    width: 50vw;
+  }
+  .recipe-thumbnail {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+@media (max-width: 650px){
+
+  .recipe-card{
+    margin: 1rem 0;
+    width: 70vw;
+  }
+}

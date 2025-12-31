@@ -30,7 +30,7 @@ export default function CategoryPage() {
             */}
       <ul
         id="recipe-card-list"
-        className="row row-cols-3"
+        className="row row-cols-lg-3"
         style={{ listStyle: "none" }}
       >
         {loading ? (
