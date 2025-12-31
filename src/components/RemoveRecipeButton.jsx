@@ -1,1 +1,1 @@
-//For Recipe cards and the Recipe Detailed page. Black or Red
+//For Removing Recipes from Favorites. Black or Red

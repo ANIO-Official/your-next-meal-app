@@ -1,1 +1,1 @@
-//For Recipe cards and the Recipe Detailed page. Blue or Green
+//For Adding Recipes to Favorites. Green or Blue

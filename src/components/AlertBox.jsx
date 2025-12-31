@@ -1,1 +1,1 @@
-//Alert when recipe exist. Yellow for warning or notice
+//Alert when Loading fetched data. Yellow for warning or notice
