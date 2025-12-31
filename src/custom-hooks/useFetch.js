@@ -18,7 +18,7 @@ export default function useFetch(url, options) {
         setData(
             url.includes('categories') ? 
             { categories: []} : //retrieve categories
-            url.includes('filter') ?
+            url.includes('filter') || url.includes('search') ?
             { meals: [] } : //retrieve recipes/meals of the category
             { meals: [{}]} //retrieve singular meal
         );

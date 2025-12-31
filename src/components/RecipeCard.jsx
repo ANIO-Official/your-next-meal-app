@@ -1,11 +1,10 @@
 //Show Preview of Recipe
 
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 //Pass prop of the specific recipe object.
-export default function RecipeCard({name, thumbnail, id}) {
-    const {category} = useParams()
+export default function RecipeCard({name, thumbnail, id, category}) {
     const connectedName = name.split(' ').join('-')
 
     {/* Instead of example, it be the recipe's strMeal property to lowercase with ' ' replaced with - */}

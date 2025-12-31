@@ -16,19 +16,20 @@ export default function HomePage() {
       !category.strCategory.includes("Vegan") &&
       !category.strCategory.includes("Vegetarian")
   );
-  const nonMeatCategories = data.categories.filter((category) =>
-    category.strCategory.includes("Vegan") ||
-    category.strCategory.includes( "Vegetarian")
-  );
-
-  const mealTimeCategories = data.categories.filter((category) =>
-    category.strCategoryDescription.includes("pasta") ||
-    category.strCategoryDescription.includes("meal")
-  );
-
-  const otherCategories = data.categories.filter(
+  const nonMeatCategories = data.categories.filter(
     (category) =>
-      category.strCategory.includes("Miscellaneous")
+      category.strCategory.includes("Vegan") ||
+      category.strCategory.includes("Vegetarian")
+  );
+
+  const mealTimeCategories = data.categories.filter(
+    (category) =>
+      category.strCategoryDescription.includes("pasta") ||
+      category.strCategoryDescription.includes("meal")
+  );
+
+  const otherCategories = data.categories.filter((category) =>
+    category.strCategory.includes("Miscellaneous")
   );
 
   return (
@@ -57,7 +58,10 @@ export default function HomePage() {
                     <button className="category-button">
                       {category.strCategory[0].toUpperCase() +
                         category.strCategory.slice(1)}
-                        <img className="category-image" src={`${category.strCategoryThumb}`}/>
+                      <img
+                        className="category-image"
+                        src={`${category.strCategoryThumb}`}
+                      />
                     </button>
                   </NavLink>
                 </li>
@@ -71,7 +75,10 @@ export default function HomePage() {
                     <button className="category-button">
                       {category.strCategory[0].toUpperCase() +
                         category.strCategory.slice(1)}
-                        <img className="category-image" src={`${category.strCategoryThumb}`}/>
+                      <img
+                        className="category-image"
+                        src={`${category.strCategoryThumb}`}
+                      />
                     </button>
                   </NavLink>
                 </li>
@@ -85,7 +92,10 @@ export default function HomePage() {
                     <button className="category-button">
                       {category.strCategory[0].toUpperCase() +
                         category.strCategory.slice(1)}
-                        <img className="category-image" src={`${category.strCategoryThumb}`}/>
+                      <img
+                        className="category-image"
+                        src={`${category.strCategoryThumb}`}
+                      />
                     </button>
                   </NavLink>
                 </li>
@@ -99,7 +109,10 @@ export default function HomePage() {
                     <button className="category-button">
                       {category.strCategory[0].toUpperCase() +
                         category.strCategory.slice(1)}
-                        <img className="category-image" src={`${category.strCategoryThumb}`}/>
+                      <img
+                        className="category-image"
+                        src={`${category.strCategoryThumb}`}
+                      />
                     </button>
                   </NavLink>
                 </li>

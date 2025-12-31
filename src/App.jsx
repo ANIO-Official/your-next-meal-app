@@ -10,6 +10,7 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import RecipeDetailPage from "./pages/RecipeDetailPage/RecipeDetailPage";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import SearchResultPage from "./pages/SearchResultPage/SearchResultPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/search" element={<SearchResultPage />} />
         <Route path="/category/:category/:recipename/:id" element={<RecipeDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

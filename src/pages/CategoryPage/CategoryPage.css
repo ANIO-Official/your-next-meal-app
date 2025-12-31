@@ -10,12 +10,11 @@
   color: rgb(105, 17, 168);
 }
 
-
 .recipe-card {
   align-items: center;
   background: linear-gradient(#c0c0c0, #a8a6a6);
   border: 2px outset #f7f2f2;
-  color: white;
+  color: rgb(0, 0, 0);
   display: flex;
   font-size: 1.25rem;
   font-weight: bold;
@@ -29,7 +28,6 @@
 .recipe-card:active {
   background: linear-gradient(#979595, #706e6e);
   outline: 1px solid rgb(75, 216, 226);
-
 }
 
 .recipe-thumbnail {
