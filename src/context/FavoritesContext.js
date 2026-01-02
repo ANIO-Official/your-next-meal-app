@@ -1,9 +1,14 @@
+import React from "react";
 import { useContext } from "react";
 
-export function FavoritesContext(){
-
-    //Default is an empty array.
-    //Should be filled with Recipe/Meal Objects that are favorited.
-    const FavoritesContext = useContext([])
-
-}
+//Default is an empty array.
+//Should be filled with Recipe/Meal Objects that are favorited.
+export const FavoritesContext = React.createContext([
+  {
+    favoriteRecipes: [], //array of recipe IDs
+    addRecipe: (recipeID) => //add recipe by ID
+      console.warn("No recipe ID has been provided to add."),
+    deleteRecipe: (recipeID) => //remove recipe by ID
+      console.warn("No recipe ID has been provided to delete."),
+  },
+]);

@@ -2,6 +2,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../custom-hooks/useFetch";
 import "./RecipeDetailPage.css";
+import FavoritesButton from "../../components/FavoritesButton";
 
 export default function RecipeDetailPage() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ export default function RecipeDetailPage() {
   return (
     <main id="recipe-detail-page" className="page">
       <h1>
-        {recipename} | {id}
+        {recipename} | {id} <FavoritesButton/>
       </h1>
 
       {loading ? (

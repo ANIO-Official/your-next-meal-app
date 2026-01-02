@@ -1,0 +1,26 @@
+
+.fave-preview{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fave-preview-img {
+  border-radius: 100%;
+  height: 80px;
+  width: 80px;
+}
+
+.fave-preview-name{
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.fave-preview-category{
+  border-radius: 1rem;
+  background-color: rgb(126, 57, 57);
+  color: white;
+  width: fit-content;
+  padding: 0.25rem 1rem;
+  margin: 0.5rem 0;
+}
