@@ -1,9 +1,14 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { FavoritesContext } from "./FavoritesContext";
+import useLocalStorage from "../custom-hooks/useLocalStorage";
 
 export default function FavoritesProvider({children}){
     //Set Favorites
-    const [favoriteRecipes, setFavoriteRecipes] = useState([])
+    const [savedFavorites, setSavedFavorites] = useLocalStorage('favoriteRecipes', "[]")
+
+    const [favoriteRecipes, setFavoriteRecipes] = useState(
+        savedFavorites && savedFavorites.length > 0? savedFavorites : []
+    )
 
     //Add new recipe ID to the list.
     const addRecipe = (recipeID) =>{
@@ -21,6 +26,10 @@ export default function FavoritesProvider({children}){
         )
     }
 
+    useEffect(() => {
+        setSavedFavorites(favoriteRecipes) //whenever favorites change, update the stored value
+
+    }, [favoriteRecipes])
     //Context Values
 
     const favoriteContextValues = useMemo(() => ({favoriteRecipes, addRecipe, deleteRecipe}), [favoriteRecipes])

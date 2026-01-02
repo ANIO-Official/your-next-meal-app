@@ -3,10 +3,11 @@
 import { useContext } from "react";
 import { FavoritesContext } from "../../context/FavoritesContext";
 import FavoriteRecipePrev from "../../components/FavoriteRecipePrev";
+import useLocalStorage from "../../custom-hooks/useLocalStorage";
 import "./FavoritesPage.css";
 
 export default function FavoritesPage() {
-  const { favoriteRecipes } = useContext(FavoritesContext);
+  const { favoriteRecipes, set } = useContext(FavoritesContext);  
 
   return (
     <main className="text-center">

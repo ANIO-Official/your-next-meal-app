@@ -6,6 +6,7 @@ import { FavoritesContext } from "../context/FavoritesContext"
 
 export default function FavoritesButton(){
     const [clicked, setClicked] = useState(false)
+    
     const { id } = useParams();
     const {favoriteRecipes, addRecipe, deleteRecipe} = useContext(FavoritesContext)
 
@@ -13,8 +14,6 @@ export default function FavoritesButton(){
         const favorited = favoriteRecipes.filter((ID) => ID === id)
 
         favorited[0] === undefined? setClicked(false) : setClicked(true)
-
-        console.log(favorited, 'exist')
     }
 
     useEffect(() => {
@@ -26,15 +25,11 @@ export default function FavoritesButton(){
         if(!clicked){
             addRecipe(id)
             setClicked(true)
-            console.log(favoriteRecipes)
-
         }else{
             deleteRecipe(id)
             setClicked(false)
-                    console.log(favoriteRecipes)
         }    
     }
-
 
     
     return (
