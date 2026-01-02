@@ -57,6 +57,7 @@ A web app in your default browser will appear with the todo list app available f
 ![Your Next Meal Home Page Preview](src/assets/previews/your-next-meal-home-pc-preview.png)
 ![Your Next Meal Category Page Preview](src/assets/previews/your-next-meal-categorymeals-pc-preview.png)
 ![Your Next Meal Meal Details Preview](src/assets/previews/your-next-meal-mealdetails-pc-preview.png)
+![Your Next Meal Favorites Preview](src/assets/previews/your-next-meal-favorites-pc-preview.png)
 ![Your Next Meal Search Result Page Preview](src/assets/previews/your-next-meal-searchresults-pc-preview.png)
 
 ## My process
@@ -82,12 +83,56 @@ A web app in your default browser will appear with the todo list app available f
 
  **Main Challenges**
 
+  My main challenge was ensuring correct types while using Javascript. I've worked with React mainly in TypeScript and I wanted to challenge myself to do in Javascript to increase my comfortability with React. Without Typescripts type noticing, I couldn't catch as many small errors as easily. An example being when I fetched fromt he MealsDB API and two separate urls both requested similar but not exact data. The categories url retrieved an object with the property meals that contained an array of meal objects within it's category, like so:
+
+  ```
+    {
+      "meals": [
+
+        {
+          strMeal: meal info here
+          strID: 28019283
+          etc
+        },
+        
+        {
+          strMeal: meal info here
+          strID: 28019283
+          etc
+        }, ...
+      ]
+    }
+  ```
+  Simiarly, when you fetch a meal by it's ID it also returns an object with the property meals that contained an array. However, it only returns a singular object. I personally felt this would be very similar since they were both return an object with a property of meals that holds an array. After testing and reevaluating the data retrieved, I realized it was due to the objects within the array holding different properties! Like so: 
+
+  ```
+  {
+    "meals": 
+    [
+      {
+        "idMeal": "52772",
+        "strMeal": "Teriyaki Chicken Casserole",
+        "strMealAlternate": null,
+        "strCategory": "Chicken",
+        "strArea": "Japanese",...
+      }
+    ]
+  }
+  ```
+  
+  I refactored my useFetch custom hook to conditionally check for a full array vs an array holding a singular object. This fixed my error and did not require me to fully list out each property in the two similar data objects. As the fetch by ID url will **always** return a singular object in the meals property, and the fetch by category **always** returns multiple objects within the meals property (I double checked).
+
+  ------------------------------
+
 
  **Design Decisions**
 
+  One partivular design decision I made was to use useEffect for the favorites button. I realized upon creating the favorites button, that there was feedback for showing if a recipe was currently in favorite *unless* you do to the page directly or click it and stayed on the page. Once you clicked off a recipe and returned, the button would prompt you to add it again leading to duplicated. I already has the button setup to toggle the open to add or delete based on the value of a 'clicked' useState variable. So to ensure the button displayed correctly, I used useEffect to toggle the state of clicked based on if the recipe id is already in the favoriteRecipes state variable. useEffect checks upon each mount of the application, so it will know to check each time the user clicks off to another part of the application.
   
 
 ### Useful resources
+
+PerScholas | Advanced React  | Lessons 1-7
 
 **MDN Documentation**
 
@@ -144,6 +189,8 @@ https://fonts.google.com/ - For OFL fonts.
 [Where in the World | Searchbar Functionality](https://github.com/ANIO-Official/where-in-the-world/blob/main/where-in-the-world-main/index.js#L505)
 
 [Input Change Event | Refactored from TS to JS for this project](https://github.com/ANIO-Official/context-api-implementation/blob/main/src/components/TodoInput/TodoInput.tsx)
+
+[Context API Implementation | Refactored todoContext for favoritesContext](https://github.com/ANIO-Official/context-api-implementation/blob/main/src/components/TodoProviders.tsx)
 
 ## Author
 
