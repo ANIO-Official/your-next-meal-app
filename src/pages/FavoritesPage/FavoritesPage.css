@@ -1,3 +1,9 @@
+#favorites-container{
+  overflow-y: scroll;
+  height: 70vh;
+  scrollbar-color: gray rgb(223, 216, 216);
+}
+
 
 .fave-preview{
   display: flex;
