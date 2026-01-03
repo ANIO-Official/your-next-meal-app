@@ -43,7 +43,7 @@ export default function RecipeDetailPage() {
                 .filter(
                   (key) =>
                     key.includes("strIngredient") &&
-                    data.meals[0][`${key}`] !== ""
+                    data.meals[0][`${key}`] !== "" && data.meals[0][`${key}`] !== null
                 )
                 .map((keyIngredient) => (
                   <li key={keyIngredient}>{data.meals[0][keyIngredient]}</li>
@@ -63,7 +63,8 @@ export default function RecipeDetailPage() {
           </ul>
           <h3>Let's Get Cooking!</h3>
           <ol className="recipe-instructions">{
-            data.meals[0].strInstructions && data.meals[0].strInstructions.split('. ').map((sentence) => 
+            data.meals[0].strInstructions && data.meals[0].strInstructions.split('.').map((sentence) => 
+                sentence === ' ' || sentence === '' ? sentence :
                 <li className="instruction-step" key={`${data.meals[0].idMeal}${sentence}`}>{` ${sentence}`}</li>
             )
             }</ol>
