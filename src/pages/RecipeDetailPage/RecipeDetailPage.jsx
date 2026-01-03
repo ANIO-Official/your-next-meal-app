@@ -62,12 +62,12 @@ export default function RecipeDetailPage() {
             </div>
           </ul>
           <h3>Let's Get Cooking!</h3>
-          <ol className="recipe-instructions">{
-            data.meals[0].strInstructions && data.meals[0].strInstructions.split('.').map((sentence) => 
+          <ul className="recipe-instructions" style={{listStyle: 'none'}}>{
+            data.meals[0].strInstructions && data.meals[0].strInstructions.split('\r\n').map((sentence) => 
                 sentence === ' ' || sentence === '' ? sentence :
                 <li className="instruction-step" key={`${data.meals[0].idMeal}${sentence}`}>{` ${sentence}`}</li>
             )
-            }</ol>
+            }</ul>
         </>
       )}
       <button onClick={() => navigate(-1)}>Go Back</button>
